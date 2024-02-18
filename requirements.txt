@@ -2,7 +2,7 @@ streamlit
 google-generativeai
 python-dotenv
 Pillow
-langchain
+langchain-community
 pyPDF2
 chromadb
 faiss-cpu
