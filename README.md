@@ -5,14 +5,23 @@ This LLM app is made using gemini-pro as the backend and streamlit for interacti
 ## Prerequisites (requirements.txt)
 
 streamlit
+
 google-generativeai
+
 python-dotenv
+
 Pillow
+
 langchain
+
 langchain-community
+
 pyPDF2
+
 chromadb
+
 faiss-cpu
+
 langchain_google_genai
 
 ## How to use
