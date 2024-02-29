@@ -25,6 +25,8 @@ def get_pdf_text(pdf_docs):
             text+= page.extract_text()
     return  text
 
+# there are so many things to do in the world that we are never really there 
+
 
 def get_text_chunks(text):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
@@ -49,13 +51,10 @@ def get_conversational_chain():
 
     Answer:
     """
-
-    model = ChatGoogleGenerativeAI(model="gemini-pro",
-                             temperature=0.8)
+    model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.8)
 
     prompt = PromptTemplate(template = prompt_template, input_variables = ["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
-
     return chain
 
 
@@ -68,7 +67,6 @@ def user_input(user_question):
     docs = new_db.similarity_search(user_question)
 
     chain = get_conversational_chain()
-
     
     response = chain(
         {"input_documents":docs, "question": user_question}
@@ -76,9 +74,6 @@ def user_input(user_question):
 
     print(response)
     st.write("Reply: ", response["output_text"])
-
-
-
 
 def main():
     st.set_page_config("Chat PDF")
